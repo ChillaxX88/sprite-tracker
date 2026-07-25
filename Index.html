@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Sprite Tracker</title>
+
+    <meta name="theme-color" content="#5c4dff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Sprite Tracker">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<div id="app">
+
+<header>
+
+<h1>Sprite Tracker</h1>
+
+<p class="subtitle">
+Track every Fortnite Sprite
+</p>
+
+</header>
+
+<section class="stats">
+
+<div class="stat-card">
+
+<span class="label">
+Completion
+</span>
+
+<span id="completion">
+0%
+</span>
+
+</div>
+
+<div class="stat-card">
+
+<span class="label">
+Collected
+</span>
+
+<span id="collected">
+0 / 0
+</span>
+
+</div>
+
+</section>
+
+<section class="toolbar">
+
+<input
+type="search"
+id="search"
+placeholder="Search Sprites..."
+autocomplete="off">
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+id="missingOnly">
+
+Show Missing Only
+
+</label>
+
+</section>
+
+<main id="spriteGrid">
+
+<div class="loading">
+
+Loading Sprite Database...
+
+</div>
+
+</main>
+
+</div>
+
+<script src="js/app.js"></script>
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+window.addEventListener("load", () => {
+
+navigator.serviceWorker.register("sw.js");
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
